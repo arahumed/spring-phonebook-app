@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Simple Phonebook Application - Added Contact</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <h1>Added Contact</h1>
+    
+  Name:<br/>
+  <input type="text" name="name" th:value="${person.name}" readonly="readonly"/>
+  <br/>
+  Mobile:<br/>
+  <input type="text" name="mobile" th:value="${person.mobile}" readonly="readonly"/>
+  <br/>
+  Email:<br/>
+  <input type="text" name="email" th:value="${person.email}" readonly="readonly"/>
+  <br/><br/>
+  
+  <button onclick="window.location.href='/'">Back</button>
+    
+</body>
+</html>

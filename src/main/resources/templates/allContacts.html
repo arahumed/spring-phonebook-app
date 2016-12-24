@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Simple Phonebook Application - All Contacts</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style>
+table, th, td {
+    border: 1px solid black;
+}
+</style>
+</head>
+<body>
+    <h1>All Contacts</h1>
+    
+    <table>
+        <tr>
+            <th align="left">ID</th>
+            <th align="left">Name</th>
+            <th align="left">Mobile</th>
+            <th align="left">Email</th>
+            <th align="left">Edit</th>
+            <th align="left">Delete</th>
+        </tr>
+        <tr th:each="person : ${listOfAllContacts}">
+            <td th:text="${person.id}">Name</td>
+            <td th:text="${person.name}">Name</td>
+            <td th:text="${person.mobile}">Mobile</td>
+            <td th:text="${person.email}">Email</td>
+            <td>
+                <a th:href="@{/call/editContact(id=${person.id})}">Edit</a>
+            </td>
+            <td>
+                <a th:href="@{/call/deleteContact(id=${person.id})}">Delete</a>
+            </td>
+        </tr>
+    </table>
+    
+    <button onclick="window.location.href='/'">Back</button>
+    
+</body>
+</html>
