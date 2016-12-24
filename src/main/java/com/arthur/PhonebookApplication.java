@@ -30,6 +30,7 @@ public class PhonebookApplication {
     @Bean
     public CommandLineRunner demo(PersonRepository repo){
         return (args) -> {
+            /*
             repo.save(newPerson("Peter", "123", "Peter@gmail.com"));
             repo.save(newPerson("Paul", "456", "Paul@outlook.com"));
             repo.save(newPerson("Mary", "789", "Mary@facebook.com"));
@@ -43,6 +44,7 @@ public class PhonebookApplication {
             for (Person p :repo.findByName("Peter")){
                 log.info(p.toString());
             }
+            */
         };
     }
     
