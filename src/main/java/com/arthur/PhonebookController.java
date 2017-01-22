@@ -5,6 +5,7 @@
  */
 package com.arthur;
 
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -70,5 +71,18 @@ public class PhonebookController {
         model.addAttribute("person", p);
         return "addedContact";
     }    
+    
+    
+    @RequestMapping("/call/searchContact")
+    public String searchContact(
+            @RequestParam(value="name") String name,
+            Model model){
+        
+        List<Person> pList = repo.findByNameContainingIgnoreCase(name);
+        model.addAttribute("name", name);
+        model.addAttribute("listOfAllContacts", pList);
+        
+        return "foundContacts";
+    }  
 
 }
